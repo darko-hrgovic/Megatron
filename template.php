@@ -180,12 +180,19 @@ function megatron_preprocess_html(&$variables) {
       $minlayout = '-full';
     }
   }
-  drupal_add_css('https://cdn.ubc.ca/clf/' . $packageprefix . $minlayout . $minversion . theme_get_setting('clf_clf_theme_new') . $packagesuffix . '.css', array(
-    'type' => 'external',
-    'group' => CSS_THEME,
-    'every_page' => TRUE,
-    'weight' => -2,
-  ));
+  // Pull custom version from child theme if it exists
+  $clf_css_file = '/' . path_to_theme() . '/clf/' . $clf_version . '/css/ubc-clf-custom.css';
+  if (file_exists(DRUPAL_ROOT . $clf_css_file)) {
+    drupal_add_css($clf_css_file);
+  }
+  else {
+    drupal_add_css('https://cdn.ubc.ca/clf/' . $packageprefix . $minlayout . $minversion . theme_get_setting('clf_clf_theme_new') . $packagesuffix . '.css', array(
+      'type' => 'external',
+      'group' => CSS_THEME,
+      'every_page' => TRUE,
+      'weight' => -2,
+    ));
+  }
   drupal_add_css(drupal_get_path('theme', 'megatron') . '/css/clf_drupal.css', array(
     'group' => CSS_THEME,
     'every_page' => TRUE,
