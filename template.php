@@ -107,11 +107,11 @@ function megatron_preprocess_html(&$variables) {
   }
 
   // Add js libraries and scripts
-  $clfVerison = theme_get_setting('clf_clf_version');
+  $clf_version = theme_get_setting('clf_clf_version');
   $options = array(
     'group' => JS_THEME,
   );
-  drupal_add_js('//cdn.ubc.ca/clf/' . $clfVerison . '/js/ubc-clf.min.js', array(
+  drupal_add_js('/' . path_to_theme() . '/clf/' . $clf_version . '/js/ubc-clf.min.js', array(
     'type' => 'external',
     'group' => JS_LIBRARY,
     'weight' => 0,
