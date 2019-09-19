@@ -116,9 +116,13 @@ function megatron_preprocess_html(&$variables) {
     'group' => JS_THEME,
   );
   // Pull custom version from child theme if it exists
-  $clf_js_file = '/' . path_to_theme() . '/clf/' . $clf_version . '/js/clf-ubc-clf.js';
+  $clf_js_file = '/' . path_to_theme() . '/clf/' . $clf_version . '/js/ubc-clf-custom.js';
   if (file_exists(DRUPAL_ROOT . $clf_js_file)) {
-    drupal_add_js($clf_js_file);
+    drupal_add_js($clf_js_file, array(
+      'type' => 'external',
+      'group' => JS_LIBRARY,
+      'weight' => 0,
+    ));
   }
   else {
     drupal_add_js('//cdn.ubc.ca/clf/' . $clf_version . '/js/ubc-clf.min.js', array(
@@ -183,7 +187,12 @@ function megatron_preprocess_html(&$variables) {
   // Pull custom version from child theme if it exists
   $clf_css_file = '/' . path_to_theme() . '/clf/' . $clf_version . '/css/ubc-clf-custom.css';
   if (file_exists(DRUPAL_ROOT . $clf_css_file)) {
-    drupal_add_css($clf_css_file);
+    drupal_add_css($clf_css_file, array(
+      'type' => 'external',
+      'group' => CSS_THEME,
+      'every_page' => TRUE,
+      'weight' => -2,
+    ));
   }
   else {
     drupal_add_css('https://cdn.ubc.ca/clf/' . $packageprefix . $minlayout . $minversion . theme_get_setting('clf_clf_theme_new') . $packagesuffix . '.css', array(
