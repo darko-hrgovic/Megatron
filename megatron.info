@@ -1,5 +1,5 @@
 name = UBC CLF 7.0.5 Drupal Theme
-description = This is a responsive <a href="http://clf.ubc.ca/" title="Discover the UBC CLF" target="_blank">UBC CLF</a> (Common Look and Feel) theme, developed by UBC IT Web Services Department. The CLF is developed, managed and distributed by UBC Communications & Marketing. To find out more about the CLF, requirements and possible customizations please see <a href="http://brand.ubc.ca/clf" title="Discover the UBC CLF Brand" target="_blank">brand.ubc.ca/clf</a>.<br /><br />For more information, support or to report an issue with this theme, please contact <a href="http://web.it.ubc.ca/forms/webservices/" title="Contact UBC IT Web Services" target="_blank">UBC IT Web Services</a>.
+description = This is a responsive <a href="https://clf.ubc.ca/" title="Discover the UBC CLF" target="_blank">UBC CLF</a> (Common Look and Feel) theme, developed by UBC IT Web Services Department. The CLF is developed, managed and distributed by UBC Communications & Marketing. To find out more about the CLF, requirements and possible customizations please see <a href="http://brand.ubc.ca/clf" title="Discover the UBC CLF Brand" target="_blank">brand.ubc.ca/clf</a>.<br /><br />For more information, support or to report an issue with this theme, please contact <a href="http://web.it.ubc.ca/forms/webservices/" title="Contact UBC IT Web Services" target="_blank">UBC IT Web Services</a>.
 version = 4.0
 core = 7.x
 
@@ -9,6 +9,8 @@ regions[help]           = 'Help'
 regions[content]        = 'Content'
 regions[sidebar_first]  = 'First Sidebar'
 regions[sidebar_second] = 'Second Sidebar'
+regions[drawer]         = 'Drawer'
+regions[flyout]         = 'Flyout'
 regions[prefooter]      = 'Content: Below'
 
 ;Styles - add your custom css here
@@ -39,6 +41,8 @@ settings[clf_locality] = 'Vancouver'
 settings[clf_region] = 'BC'
 settings[clf_country] = 'Canada'
 settings[clf_use_path_body_classes] = 0
+settings[clf_drawer_region] = 'default'
+settings[clf_use_primary_menu_in_drawer] = TRUE
 
 ;Excluded CSS Files
 exclude[css][] = 'misc/vertical-tabs.css'
