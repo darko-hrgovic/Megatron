@@ -1037,7 +1037,7 @@ function megatron_megatron_links($variables) {
         if (count($children) > 0) {
           $link['html'] = TRUE;
           $output .= '<div class="btn-group">' . l($link['title'], $link['href'], $link);
-          $output .= '<button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>';
+          $output .= '<button aria-label="'. $link['title'] . '" class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>';
         }
         else {
           $output .= l($link['title'], $link['href'], $link);
